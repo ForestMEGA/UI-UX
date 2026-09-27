@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeDisplay = document.getElementById("current-time");
     const langToggle = document.getElementById("lang-toggle");
     const sendRequestBtn = document.getElementById("send-request-btn");
-
-    // 1. ГОДИННИК НАЖИВО
+  
     function updateClock() {
         if (!timeDisplay) return;
         const now = new Date();
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateClock, 1000); 
     updateClock();
 
-    // 2. МУЛЬТИМОВНІСТЬ (UKR / ENG)
     let currentLang = "uk";
     const langData = {
         uk: { greet: "Оберіть Послугу", badge: "ГВАРДІЯ ТА КОНСАЛТИНГ", alert: "Шановний Mykyta, ваш запит надіслано в ПВК Cerberus.", book: "Заявку прийнято! Менеджер зв'яжеться з вами." },
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 3. АВТОНОМНИЙ НАДІЙНИЙ ТАЙМЕР ЗАВАНТАЖЕННЯ ЗАСТАВКИ
     let progress = 0;
     const loadInterval = setInterval(() => {
         if (progress < 100) {
@@ -48,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else {
             clearInterval(loadInterval);
-            // Перемикання екранів після завершення
+    
             if (splashScreen) { 
                 splashScreen.style.opacity = "0"; 
                 splashScreen.style.visibility = "hidden"; 
@@ -61,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 20);
 
-    // 4. ОБРОБКА КЛІКІВ ТА ВІДПРАВКА ФОРМИ ДЛЯ КЛІЄНТА MYKYTA
     document.querySelectorAll(".book-btn").forEach(btn => {
         btn.addEventListener("click", (e) => { e.stopPropagation(); alert(langData[currentLang].book); });
     });
@@ -77,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 5. НАВІГАЦІЯ ВКЛАДОК НИЖНЬОГО МЕНЮ (SPA)
     const tabItems = document.querySelectorAll(".tab-bar .tab-item");
     const screens = [
         document.getElementById("view-services"), 
