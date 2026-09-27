@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cerberus Tactical Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- === 1. ЕКРАН ЗАСТАВКИ === -->
+        <div id="splash-screen">
+            <div class="splash-header">
+                <div>SYS // CORES.INIT</div>
+                <div class="secure-alert">SECURED</div>
+            </div>
+            <div class="logo-container">
+                <svg class="main-logo-svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="41" stroke="#C5954B" stroke-width="1.5" fill="none" />
+                    <line x1="50" y1="2" x2="50" y2="12" stroke="#C5954B" stroke-width="2" />
+                    <line x1="50" y1="88" x2="50" y2="98" stroke="#C5954B" stroke-width="2" />
+                    <line x1="2" y1="50" x2="12" y2="50" stroke="#C5954B" stroke-width="2" />
+                    <line x1="88" y1="50" x2="98" y2="50" stroke="#C5954B" stroke-width="2" />
+                    <polygon points="50,32 65,39 65,58 50,70 35,58 35,39" fill="#06090E" stroke="#C5954B" stroke-width="2" />
+                    <path d="M55,44 C53,42.5 51,42.5 49,42.5 C44.5,42.5 42.5,45.5 42.5,50 C42.5,54.5 44.5,57.5 49,57.5 C51,57.5 53,57 55,55.5" stroke="#C5954B" stroke-width="2.5" fill="none" />
+                </svg>
+                <div class="brand-name">THE CERBERUS</div>
+                <div class="brand-sub">PRIVATE MILITARY COMPANY</div>
+            </div>
+            <div class="splash-footer">
+                <div class="status-text" id="load-status">CONNECTING... (0%)</div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
+            </div>
+        </div>
+
+        <!-- === 2. ГОЛОВНЕ МЕНЮ === -->
+        <div id="home-screen">
+            <div class="app-header">
+                <div>
+                    <div class="contract-badge" data-lang-uk="ГВАРДІЯ ТА КОНСАЛТИНГ" data-lang-en="DEFENSE & CONSULTING">ГВАРДІЯ ТА КОНСАЛТИНГ</div>
+                    <div class="user-greet" data-lang-uk="Оберіть Послугу" data-lang-en="Select Service">Оберіть Послугу</div>
+                </div>
+                <div class="header-right-block"><div class="lang-switch" id="lang-toggle">UKR</div><div id="current-time">00:00:00</div></div>
+            </div>
+
+            <!-- Вкладка 1: SERVICES -->
+            <div id="view-services" class="view-screen active">
+                <div class="section-label" data-lang-uk="ВІЙСЬКОВІ ПОСЛУГИ" data-lang-en="MILITARY SERVICES">ВІЙСЬКОВІ ПОСЛУГИ</div>
+                <div class="service-card">
+                    <div class="service-badge">CLASS A</div>
+                    <div class="service-title">Бойові операції</div>
+                    <div class="service-text">Залучення ветеранів для стабілізації кризових зон та виконання спецзавдань.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-badge">OBJECTS</div>
+                    <div class="service-title">Охорона об'єктів</div>
+                    <div class="service-text">Створення захищеного периметра промислових комплексів та місій.</div>
+                </div>
+            </div>
+
+            <!-- Вкладка 2: TRAINING -->
+            <div id="view-training" class="view-screen">
+                <div class="section-label" data-lang-uk="КУРСИ З ВИЖИВАННЯ" data-lang-en="SURVIVAL COURSES">КУРСИ З ВИЖИВАННЯ</div>
+                <div class="training-card">
+                    <div class="course-header"><div class="course-name">Alpine Extraction Pro</div><div class="diff-tag">CRITICAL</div></div>
+                    <div class="course-desc">Виживання в умовах гірських масивів та альпіністська бойова підготовка.</div>
+                    <div class="course-footer"><span class="price-tag">$4,500</span><button class="book-btn">APPLY NOW</button></div>
+                </div>
+            </div>
+
+            <!-- Вкладка 3: CONTACT -->
+            <div id="view-contact" class="view-screen">
+                <div class="section-label" data-lang-uk="ЗАШИФРОВАНИЙ ЗВ'ЯЗОК" data-lang-en="ENCRYPTED UPLINK">ЗАШИФРОВАНИЙ ЗВ'ЯЗОК</div>
+                <div class="contact-form-card">
+                    <div class="form-group"><label>Your Name / Corp</label><input type="text" id="form-name"></div>
+                    <div class="form-group"><label>Message Details</label><textarea id="form-msg" rows="3"></textarea></div>
+                    <button class="submit-form-btn" id="send-request-btn">SEND ENQUIRY</button>
+                </div>
+            </div>
+
+            <!-- Нижнє меню -->
+            <div class="tab-bar">
+                <div class="tab-item active">
+                    <svg class="tab-icon-svg" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    <div>SERVICES</div>
+                </div>
+                <div class="tab-item">
+                    <svg class="tab-icon-svg" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                    <div>COURSES</div>
+                </div>
+                <div class="tab-item">
+                    <svg class="tab-icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <div>CONTACT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
